@@ -10,6 +10,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.itsmike.kotlincalc.ui.theme.KotlinCalcTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,7 +20,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             KotlinCalcTheme {
-
+                val viewModel = viewModel<CalcVM>()
+                val state = viewModel.state
+                val defaultSpacing = 10.dp
             }
         }
     }
