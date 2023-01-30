@@ -1,5 +1,6 @@
 package com.itsmike.kotlincalc
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -15,8 +16,9 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun Calculator(
     state: CalcState,
+    modifier: Modifier = Modifier,
     btnSpacing: Dp = 10.dp,
-    modifier: Modifier = Modifier
+    onAction: (CalcAction) -> Unit
 ) {
     Box(modifier = modifier) {
         Column(
@@ -37,6 +39,23 @@ fun Calculator(
                 color = Color.White,
                 maxLines = 2
             )
+            
+            Row(modifier = Modifier
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(btnSpacing)
+            ) {
+                CalcButton(
+                    calcSymbol = "AC",
+                    modifier = Modifier
+                        .background(Color.LightGray)
+                        .aspectRatio(2f)
+                        .weight(2f),
+                    onClick = {
+                        onAction(CalcAction.Clear)
+                    }
+                )
+            }
+            }
+
         }
     }
-}
