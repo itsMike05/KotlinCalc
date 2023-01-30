@@ -8,7 +8,6 @@ import androidx.lifecycle.ViewModel
 class CalcVM : ViewModel() {
 
     var state by mutableStateOf(CalcState())
-        private set
 
     fun onAction (action : CalcAction){
 
@@ -73,7 +72,7 @@ class CalcVM : ViewModel() {
         if (!state.number2.contains(".") && state.number2.isNotBlank())
         {
             state = state.copy(
-                number1 = state.number2 + "."
+                number2 = state.number2 + "."
             )
         }
 

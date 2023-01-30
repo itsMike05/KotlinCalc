@@ -2,6 +2,7 @@ package com.itsmike.kotlincalc
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -20,13 +21,15 @@ fun CalcButton(
     Box (
         contentAlignment = Alignment.Center,
         modifier = Modifier
-            .clip(RectangleShape)
-            .clickable { onClick }
+            .clip(CircleShape)
+            .clickable {
+                onClick()
+            }
             .then(modifier)
             ){
             Text(
                 text = calcSymbol,
-                fontSize = 36.sp,
+                fontSize = 30.sp,
                 color = Color.White
             )
     }
