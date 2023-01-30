@@ -31,13 +31,13 @@ fun Calculator(
         )
         {
             Text(
-                text = state.number1 + (state.operation ?: "") + state.number2,
+                text = state.number1 + (state.operation?.symbol ?: "") + state.number2,
                 textAlign = TextAlign.End,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 25.dp),
-                fontWeight = FontWeight.Light,
-                fontSize = 85.sp,
+                    .padding(vertical = 5.dp),
+                fontWeight = FontWeight.Bold,
+                fontSize = 35.sp,
                 color = Color.White,
                 maxLines = 2
             )
@@ -58,7 +58,7 @@ fun Calculator(
                     }
                 )
                 CalcButton(
-                    calcSymbol = "Delete",
+                    calcSymbol = "Del",
                     modifier = Modifier
                         .background(Color.LightGray)
                         .aspectRatio(1f)
@@ -235,7 +235,7 @@ fun Calculator(
                     }
                 )
                 CalcButton(
-                    calcSymbol = "decimal",
+                    calcSymbol = ".",
                     modifier = Modifier
                         .background(Color.LightGray)
                         .aspectRatio(1f)
@@ -245,7 +245,7 @@ fun Calculator(
                     }
                 )
                 CalcButton(
-                    calcSymbol = "operate",
+                    calcSymbol = "=",
                     modifier = Modifier
                         .background(Teal200)
                         .aspectRatio(1f)

@@ -36,7 +36,6 @@ class MainActivity : ComponentActivity() {
                         .background(MediumGray)
                         .padding(16.dp)
                     )
-
             }
         }
     }
