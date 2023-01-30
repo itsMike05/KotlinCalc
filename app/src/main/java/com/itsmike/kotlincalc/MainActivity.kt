@@ -23,6 +23,7 @@ class MainActivity : ComponentActivity() {
                 val viewModel = viewModel<CalcVM>()
                 val state = viewModel.state
                 val defaultSpacing = 10.dp
+
             }
         }
     }
